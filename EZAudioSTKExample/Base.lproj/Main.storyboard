@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Signal Generator Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignalGeneratorController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,7 +15,50 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="EZAudioPlotGL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-MB-jBA">
+                                <rect key="frame" x="18" y="552" width="59" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Aip-pt-9ia"/>
+                                    <constraint firstAttribute="width" constant="59" id="rwX-NB-gXy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Pause"/>
+                                <connections>
+                                    <action selector="changedPlayState:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xe7-ip-zwv"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200" minValue="20" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="CM8-10-jmZ">
+                                <rect key="frame" x="84" y="552" width="432" height="31"/>
+                                <connections>
+                                    <action selector="changedFrequency:" destination="BYZ-38-t0r" eventType="valueChanged" id="8qx-kk-vF2"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOL-ds-bmG">
+                                <rect key="frame" x="523" y="552" width="59" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="nBw-DD-wYO"/>
+                                    <constraint firstAttribute="height" constant="30" id="uRY-jy-Nc2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CM8-10-jmZ" secondAttribute="bottom" constant="18" id="4Ts-je-e4m"/>
+                            <constraint firstItem="CM8-10-jmZ" firstAttribute="leading" secondItem="NJ9-MB-jBA" secondAttribute="trailing" constant="9" id="G9n-hr-EZu"/>
+                            <constraint firstItem="MOL-ds-bmG" firstAttribute="leading" secondItem="CM8-10-jmZ" secondAttribute="trailing" constant="9" id="QRE-0C-wsW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NJ9-MB-jBA" secondAttribute="bottom" constant="18" id="bBZ-So-RLg"/>
+                            <constraint firstItem="NJ9-MB-jBA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="18" id="bHz-IQ-tre"/>
+                            <constraint firstItem="CM8-10-jmZ" firstAttribute="centerY" secondItem="MOL-ds-bmG" secondAttribute="centerY" id="f1y-Ue-6bd"/>
+                            <constraint firstAttribute="trailing" secondItem="MOL-ds-bmG" secondAttribute="trailing" constant="18" id="wzN-62-t4J"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
                                 <color key="value" red="0.20000000000000001" green="0.19607843137254902" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
@@ -23,10 +66,13 @@
                             <userDefinedRuntimeAttribute type="color" keyPath="color">
                                 <color key="value" red="0.49411764705882355" green="0.60392156862745094" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldFill" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="shouldFill" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="frequencyLabel" destination="MOL-ds-bmG" id="Gh3-zX-gT9"/>
+                        <outlet property="frequencySlider" destination="CM8-10-jmZ" id="gxu-GD-6YB"/>
+                        <outlet property="playButton" destination="NJ9-MB-jBA" id="dVY-cL-feB"/>
                         <outlet property="plot" destination="8bC-Xf-vdC" id="Hqs-ZE-gjn"/>
                     </connections>
                 </viewController>

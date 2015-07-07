@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		664E9F221B4C7D6C008A7DF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 664E9F211B4C7D6C008A7DF8 /* main.m */; };
 		664E9F251B4C7D6C008A7DF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 664E9F241B4C7D6C008A7DF8 /* AppDelegate.m */; };
-		664E9F281B4C7D6C008A7DF8 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 664E9F271B4C7D6C008A7DF8 /* ViewController.mm */; };
+		664E9F281B4C7D6C008A7DF8 /* SignalGeneratorController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 664E9F271B4C7D6C008A7DF8 /* SignalGeneratorController.mm */; };
 		664E9F2B1B4C7D6C008A7DF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664E9F291B4C7D6C008A7DF8 /* Main.storyboard */; };
 		664E9F2D1B4C7D6C008A7DF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664E9F2C1B4C7D6C008A7DF8 /* Images.xcassets */; };
 		664E9F301B4C7D6C008A7DF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664E9F2E1B4C7D6C008A7DF8 /* LaunchScreen.xib */; };
@@ -35,8 +35,8 @@
 		664E9F211B4C7D6C008A7DF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		664E9F231B4C7D6C008A7DF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		664E9F241B4C7D6C008A7DF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		664E9F261B4C7D6C008A7DF8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		664E9F271B4C7D6C008A7DF8 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		664E9F261B4C7D6C008A7DF8 /* SignalGeneratorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalGeneratorController.h; sourceTree = "<group>"; };
+		664E9F271B4C7D6C008A7DF8 /* SignalGeneratorController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SignalGeneratorController.mm; sourceTree = "<group>"; };
 		664E9F2A1B4C7D6C008A7DF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		664E9F2C1B4C7D6C008A7DF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		664E9F2F1B4C7D6C008A7DF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 			children = (
 				664E9F231B4C7D6C008A7DF8 /* AppDelegate.h */,
 				664E9F241B4C7D6C008A7DF8 /* AppDelegate.m */,
-				664E9F261B4C7D6C008A7DF8 /* ViewController.h */,
-				664E9F271B4C7D6C008A7DF8 /* ViewController.mm */,
+				664E9F261B4C7D6C008A7DF8 /* SignalGeneratorController.h */,
+				664E9F271B4C7D6C008A7DF8 /* SignalGeneratorController.mm */,
 				664E9F291B4C7D6C008A7DF8 /* Main.storyboard */,
 				664E9F2C1B4C7D6C008A7DF8 /* Images.xcassets */,
 				664E9F2E1B4C7D6C008A7DF8 /* LaunchScreen.xib */,
@@ -278,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				664E9F281B4C7D6C008A7DF8 /* ViewController.mm in Sources */,
+				664E9F281B4C7D6C008A7DF8 /* SignalGeneratorController.mm in Sources */,
 				664E9F251B4C7D6C008A7DF8 /* AppDelegate.m in Sources */,
 				664E9F221B4C7D6C008A7DF8 /* main.m in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <EZAudio.h>
 
 @interface AppDelegate ()
 
@@ -16,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[EZOutput sharedOutput] setVolume:0.5f];
+    
     // Override point for customization after application launch.
     return YES;
 }
