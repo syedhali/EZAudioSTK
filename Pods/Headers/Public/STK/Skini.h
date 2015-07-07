@@ -1,1 +1,0 @@
-../../../STK/include/Skini.h

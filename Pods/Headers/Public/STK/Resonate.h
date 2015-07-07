@@ -1,1 +1,0 @@
-../../../STK/include/Resonate.h
