@@ -1,0 +1,1 @@
+../../../STK/include/SKINItbl.h
