@@ -1,1 +1,0 @@
-../../../STK/include/MidiFileIn.h
