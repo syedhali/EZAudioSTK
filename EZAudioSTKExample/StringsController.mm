@@ -9,11 +9,13 @@
 #import "StringsController.h"
 #import <STK/Guitar.h>
 #import <STK/Mandolin.h>
+#import <STK/Sitar.h>
 
 typedef NS_ENUM(NSInteger, StringsType)
 {
     StringsTypeGuitar,
     StringsTypeMandolin,
+    StringsTypeSitar,
 };
 
 using namespace stk;
@@ -21,6 +23,7 @@ using namespace stk;
 @interface StringsController ()
 @property (assign, nonatomic) Guitar *guitar;
 @property (assign, nonatomic) Mandolin *mandolin;
+@property (assign, nonatomic) Sitar *sitar;
 @property (assign, nonatomic) StringsType type;
 @end
 
@@ -37,6 +40,10 @@ using namespace stk;
     self.mandolin = new Mandolin(LowestFrequency);
     self.mandolin->setFrequency(DefaultFrequency);
     self.mandolin->setSampleRate(SampleRate);
+    
+    self.sitar = new Sitar();
+    self.sitar->setFrequency(DefaultFrequency);
+    self.sitar->setSampleRate(SampleRate);
     
     self.type = StringsTypeGuitar;
     
@@ -63,6 +70,9 @@ using namespace stk;
             case StringsTypeMandolin:
                 buffer[i] = self.mandolin->tick();
                 break;
+            case StringsTypeSitar:
+                buffer[i] = self.sitar->tick();
+                break;
             default:
                 break;
         }
@@ -80,6 +90,7 @@ using namespace stk;
     float value = [(UISlider *)sender value];
     self.guitar->setFrequency(value);
     self.mandolin->setFrequency(value);
+    self.sitar->setFrequency(value);
     self.frequencyLabel.text = @(value).stringValue;
 }
 
@@ -97,6 +108,7 @@ using namespace stk;
 {
     self.guitar->noteOn(self.frequencySlider.value, 1.0f);
     self.mandolin->noteOn(self.frequencySlider.value, 1.0f);
+    self.sitar->noteOn(self.frequencySlider.value, 1.0f);
 }
 
 @end

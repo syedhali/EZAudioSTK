@@ -199,10 +199,10 @@
                                 <segments>
                                     <segment title="Guitar"/>
                                     <segment title="Mandolin"/>
+                                    <segment title="Sitar"/>
                                 </segments>
                                 <connections>
                                     <action selector="changedStringInstrument:" destination="bvj-pq-2Oj" eventType="valueChanged" id="sSS-c2-wZJ"/>
-                                    <action selector="changedWaveshape:" destination="BYZ-38-t0r" eventType="valueChanged" id="uO3-sV-K9s"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
