@@ -6,19 +6,11 @@
 //  Copyright (c) 2015 Syed Haris Ali. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <EZAudio.h>
+#import "BaseController.h"
 
-@interface SignalGeneratorController : UIViewController <EZOutputDataSource,
-                                                         EZOutputDelegate>
+@interface SignalGeneratorController : BaseController
 
-@property (weak, nonatomic) IBOutlet UILabel *frequencyLabel;
-@property (weak, nonatomic) IBOutlet UISlider *frequencySlider;
-@property (weak, nonatomic) IBOutlet UIButton *playButton;
-@property (weak, nonatomic) IBOutlet EZAudioPlotGL *plot;
-
-- (IBAction)changedFrequency:(id)sender;
-- (IBAction)changedPlayState:(id)sender;
+- (IBAction)changedWaveshape:(id)sender;
 
 @end
 

@@ -7,27 +7,27 @@
 //
 
 #import "SignalGeneratorController.h"
-#import <EZAudio.h>
 #import <STK/SineWave.h>
+#import <STK/BlitSquare.h>
+#import <STK/BlitSaw.h>
 
-float const SampleRate = 44100.0f;
+typedef NS_ENUM(NSInteger, SignalGeneratorWaveType)
+{
+    SignalGeneratorWaveTypeSine,
+    SignalGeneratorWaveTypeSquare,
+    SignalGeneratorWaveTypeSawtooth,
+};
 
 using namespace stk;
 
 @interface SignalGeneratorController ()
-@property (nonatomic, assign) SineWave *sineWave;
+@property (assign, nonatomic) BlitSaw *sawToothWave;
+@property (assign, nonatomic) BlitSquare *squareWave;
+@property (assign, nonatomic) SineWave *sineWave;
+@property (assign, nonatomic) SignalGeneratorWaveType type;
 @end
 
 @implementation SignalGeneratorController
-
-//------------------------------------------------------------------------------
-#pragma mark - Status Bar
-//------------------------------------------------------------------------------
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
 
 //------------------------------------------------------------------------------
 #pragma mark - View Lifecycle
@@ -37,21 +37,19 @@ using namespace stk;
 {
     [super viewDidLoad];
     
-    float frequency = 200.0f;
     self.sineWave = new SineWave();
-    self.sineWave->setFrequency(frequency);
+    self.sineWave->setFrequency(DefaultFrequency);
     self.sineWave->setSampleRate(SampleRate);
     
-    AudioStreamBasicDescription inputFormat = [EZAudioUtilities monoFloatFormatWithSampleRate:SampleRate];
-    EZOutput *output = [EZOutput sharedOutput];
-    [output setInputFormat:inputFormat];
-    [output setDataSource:self];
-    [output setDelegate: self];
-    [output startPlayback];
+    self.squareWave = new BlitSquare();
+    self.squareWave->setFrequency(DefaultFrequency);
+    self.squareWave->setSampleRate(SampleRate);
     
+    self.sawToothWave = new BlitSaw();
+    self.sawToothWave->setFrequency(DefaultFrequency);
+    self.sawToothWave->setSampleRate(SampleRate);
     
-    self.playButton.selected = output.isPlaying;
-    self.frequencyLabel.text = @(frequency).stringValue;
+    self.type = SignalGeneratorWaveTypeSine;
 }
 
 //------------------------------------------------------------------------------
@@ -66,28 +64,25 @@ using namespace stk;
     float *buffer = (float *)audioBufferList->mBuffers[0].mData;
     for (UInt32 i = 0; i < frames; i++)
     {
-        buffer[i] = self.sineWave->tick();
+        switch (self.type)
+        {
+            case SignalGeneratorWaveTypeSine:
+                buffer[i] = self.sineWave->tick();
+                break;
+                
+            case SignalGeneratorWaveTypeSquare:
+                buffer[i] = self.squareWave->tick();
+                break;
+                
+            case SignalGeneratorWaveTypeSawtooth:
+                buffer[i] = self.sawToothWave->tick();
+                break;
+                
+            default:
+                break;
+        }
     }
     return noErr;
-}
-
-//------------------------------------------------------------------------------
-#pragma mark - EZOutputDelegate
-//------------------------------------------------------------------------------
-
-- (void)output:(EZOutput *)output changedPlayingState:(BOOL)isPlaying
-{
-    [self.playButton setSelected:isPlaying];
-}
-
-//------------------------------------------------------------------------------
-
-- (void)output:(EZOutput *)output playedAudio:(float **)buffer withBufferSize:(UInt32)bufferSize withNumberOfChannels:(UInt32)numberOfChannels
-{
-    __weak typeof (self) weakSelf = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [weakSelf.plot updateBuffer:buffer[0] withBufferSize:bufferSize];
-    });
 }
 
 //------------------------------------------------------------------------------
@@ -98,22 +93,17 @@ using namespace stk;
 {
     float value = [(UISlider *)sender value];
     self.sineWave->setFrequency(value);
+    self.squareWave->setFrequency(value);
+    self.sawToothWave->setFrequency(value);
     self.frequencyLabel.text = @(value).stringValue;
 }
 
 //------------------------------------------------------------------------------
 
-- (void)changedPlayState:(id)sender
+- (void)changedWaveshape:(id)sender
 {
-    EZOutput *output = [EZOutput sharedOutput];
-    if ([output isPlaying])
-    {
-        [output stopPlayback];
-    }
-    else
-    {
-        [output startPlayback];
-    }
+    SignalGeneratorWaveType type = (SignalGeneratorWaveType)[(UISegmentedControl *)sender selectedSegmentIndex];
+    self.type = type;
 }
 
 @end

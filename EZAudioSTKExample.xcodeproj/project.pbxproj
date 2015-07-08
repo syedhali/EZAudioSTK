@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		664E9F221B4C7D6C008A7DF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 664E9F211B4C7D6C008A7DF8 /* main.m */; };
-		664E9F251B4C7D6C008A7DF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 664E9F241B4C7D6C008A7DF8 /* AppDelegate.m */; };
+		664E9F251B4C7D6C008A7DF8 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 664E9F241B4C7D6C008A7DF8 /* AppDelegate.mm */; };
 		664E9F281B4C7D6C008A7DF8 /* SignalGeneratorController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 664E9F271B4C7D6C008A7DF8 /* SignalGeneratorController.mm */; };
 		664E9F2B1B4C7D6C008A7DF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664E9F291B4C7D6C008A7DF8 /* Main.storyboard */; };
 		664E9F2D1B4C7D6C008A7DF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664E9F2C1B4C7D6C008A7DF8 /* Images.xcassets */; };
 		664E9F301B4C7D6C008A7DF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664E9F2E1B4C7D6C008A7DF8 /* LaunchScreen.xib */; };
 		664E9F3C1B4C7D6C008A7DF8 /* EZAudioSTKExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 664E9F3B1B4C7D6C008A7DF8 /* EZAudioSTKExampleTests.m */; };
+		6679BC051B4C8B3B00ADEC2A /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6679BC031B4C8B3B00ADEC2A /* AppController.m */; };
+		6679BC0A1B4C8DD200ADEC2A /* StringsController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6679BC081B4C8DD200ADEC2A /* StringsController.mm */; };
+		6679BC0F1B4C952700ADEC2A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6679BC0E1B4C952700ADEC2A /* Constants.m */; };
+		6679BC121B4C958500ADEC2A /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6679BC111B4C958500ADEC2A /* BaseController.m */; };
+		6679BC151B4CA35000ADEC2A /* FMController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6679BC141B4CA35000ADEC2A /* FMController.mm */; };
 		8DFF745C252FCE160F7121A2 /* libPods-EZAudioSTKExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9B9898FAC8E2EA524DF2EC /* libPods-EZAudioSTKExample.a */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +39,7 @@
 		664E9F201B4C7D6C008A7DF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		664E9F211B4C7D6C008A7DF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		664E9F231B4C7D6C008A7DF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		664E9F241B4C7D6C008A7DF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		664E9F241B4C7D6C008A7DF8 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		664E9F261B4C7D6C008A7DF8 /* SignalGeneratorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalGeneratorController.h; sourceTree = "<group>"; };
 		664E9F271B4C7D6C008A7DF8 /* SignalGeneratorController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SignalGeneratorController.mm; sourceTree = "<group>"; };
 		664E9F2A1B4C7D6C008A7DF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +48,16 @@
 		664E9F351B4C7D6C008A7DF8 /* EZAudioSTKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EZAudioSTKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		664E9F3A1B4C7D6C008A7DF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		664E9F3B1B4C7D6C008A7DF8 /* EZAudioSTKExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZAudioSTKExampleTests.m; sourceTree = "<group>"; };
+		6679BC021B4C8B3B00ADEC2A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		6679BC031B4C8B3B00ADEC2A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		6679BC071B4C8DD200ADEC2A /* StringsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringsController.h; sourceTree = "<group>"; };
+		6679BC081B4C8DD200ADEC2A /* StringsController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StringsController.mm; sourceTree = "<group>"; };
+		6679BC0D1B4C952700ADEC2A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		6679BC0E1B4C952700ADEC2A /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		6679BC101B4C958500ADEC2A /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
+		6679BC111B4C958500ADEC2A /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
+		6679BC131B4CA35000ADEC2A /* FMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMController.h; sourceTree = "<group>"; };
+		6679BC141B4CA35000ADEC2A /* FMController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FMController.mm; sourceTree = "<group>"; };
 		A5E7924F0A4C6E230B5386C3 /* Pods-EZAudioSTKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EZAudioSTKExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-EZAudioSTKExample/Pods-EZAudioSTKExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,9 +112,19 @@
 			isa = PBXGroup;
 			children = (
 				664E9F231B4C7D6C008A7DF8 /* AppDelegate.h */,
-				664E9F241B4C7D6C008A7DF8 /* AppDelegate.m */,
+				664E9F241B4C7D6C008A7DF8 /* AppDelegate.mm */,
+				6679BC0D1B4C952700ADEC2A /* Constants.h */,
+				6679BC0E1B4C952700ADEC2A /* Constants.m */,
+				6679BC021B4C8B3B00ADEC2A /* AppController.h */,
+				6679BC031B4C8B3B00ADEC2A /* AppController.m */,
+				6679BC101B4C958500ADEC2A /* BaseController.h */,
+				6679BC111B4C958500ADEC2A /* BaseController.m */,
 				664E9F261B4C7D6C008A7DF8 /* SignalGeneratorController.h */,
 				664E9F271B4C7D6C008A7DF8 /* SignalGeneratorController.mm */,
+				6679BC071B4C8DD200ADEC2A /* StringsController.h */,
+				6679BC081B4C8DD200ADEC2A /* StringsController.mm */,
+				6679BC131B4CA35000ADEC2A /* FMController.h */,
+				6679BC141B4CA35000ADEC2A /* FMController.mm */,
 				664E9F291B4C7D6C008A7DF8 /* Main.storyboard */,
 				664E9F2C1B4C7D6C008A7DF8 /* Images.xcassets */,
 				664E9F2E1B4C7D6C008A7DF8 /* LaunchScreen.xib */,
@@ -278,9 +303,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6679BC151B4CA35000ADEC2A /* FMController.mm in Sources */,
 				664E9F281B4C7D6C008A7DF8 /* SignalGeneratorController.mm in Sources */,
-				664E9F251B4C7D6C008A7DF8 /* AppDelegate.m in Sources */,
+				6679BC121B4C958500ADEC2A /* BaseController.m in Sources */,
+				664E9F251B4C7D6C008A7DF8 /* AppDelegate.mm in Sources */,
 				664E9F221B4C7D6C008A7DF8 /* main.m in Sources */,
+				6679BC0A1B4C8DD200ADEC2A /* StringsController.mm in Sources */,
+				6679BC051B4C8B3B00ADEC2A /* AppController.m in Sources */,
+				6679BC0F1B4C952700ADEC2A /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
